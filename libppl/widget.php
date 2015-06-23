@@ -10,6 +10,7 @@ class postpoll_widget extends WP_Widget {
  
     function widget($args,$instance){
         // Contenido del Widget que se mostrará en la Sidebar
+        extract($args);
         echo $before_widget;  
 
         $poll_ID = $instance["postpoll_pollid"];
@@ -30,16 +31,20 @@ class postpoll_widget extends WP_Widget {
             $showresult = get_post_meta($poll_ID, 'showresult', true);
             $onlyuser = get_post_meta($poll_ID, 'onlyuser', true);
             $savecookie = get_post_meta($poll_ID, 'savecookie', true);
-            if (isset($_COOKIE['voted']))
-                $voted = $_COOKIE['voted'];
+            $useimage=get_post_meta($poll_ID, 'useimage', true);
+            if (isset($_COOKIE['voted-'.$poll_ID])) {
+                $voted = $_COOKIE['voted-'.$poll_ID];
+            } else {
+                $voted=0;
+            }
             ?>
-            <aside id='postpoll_widget' class='widget postpoll_widget' <?php if (isset($onlyuser) && $onlyuser==1) echo "style=\"display: none\""; ?>>
+            <div id='postpoll_widget-main' <?php if (isset($onlyuser) && $onlyuser==1 && !is_user_logged_in()) echo "style=\"display: none\""; ?>>
                 <?php
                 if ($showresult==1) {
                 ?>    
                         <h3 class='widget-title'><?php echo $post_title; ?></h3>
                 <?php } ?>
-            <div class="postpollmess" id="postpollmess" <?php if ($voted!=1) echo "style=\"display: none\""; ?>>
+            <div class="postpollmess" id="postpollmess-<?php echo "$poll_ID"; ?>" <?php if ($voted!=1) echo "style=\"display: none\""; ?>>
                 <?php
                 if ($showresult==1) {
                         if (isset($entradas)) {
@@ -47,14 +52,33 @@ class postpoll_widget extends WP_Widget {
                             foreach($entradas as $key) {
                                 $name = get_the_title( $key );
                                 $votes = get_post_meta($key, 'postpoll-votes-'.$poll_ID, true);
-                                echo "<li>". $name ." - <span id=\"post-".$key."\">". $votes ."</span></li>";
-                            }
+                            ?>  <li>
+                                <div class="media outcontainer" <?php if ($useimage!=1) echo "style=\"height:auto\""; ?>> 
+                                            <?php
+                                                if ($useimage==1) {
+                                                    $thumb_id = get_post_thumbnail_id($key);
+                                                    $thumb_url = wp_get_attachment_image_src($thumb_id,'thumbnail-size', true);
+                                                    ?>
+                                                        <div class="media-left pull-left img-container">
+                                                            <img src="<? echo $thumb_url[0]; ?>">
+                                                        </div>
+                                                <?php
+                                                }
+                                                ?>
+                            <div class="media-body content-cntr">
+                            <div class="titlejust"  <?php if ($useimage!=1) echo "style=\"margin-left:0px\""; ?>><?php echo $name; ?>- <span id="post-<?php echo $key; ?>"><?php echo $votes; ?></span></div>
+                            </div>
+                        </div>
+                            </li>
+                            <?php }
                             echo "</ul>";
                         }
                 }
                 ?>
+                <div id="thankstext" style="display:none;"><?php _e('Thanks for your Vote','postpoll'); ?></div>
+                <div id="errortext" style="display:none;"><?php _e('Sorry, your vote could not be added','postpoll'); ?></div>
             </div>
-            <div class="postpoll" id="postpoll" <?php if (isset($voted) && $voted==1) echo "style=\"display: none\""; ?>>
+            <div class="postpoll" id="postpoll-<?php echo "$poll_ID"; ?>" <?php if (isset($voted) && $voted==1) echo "style=\"display: none\""; ?>>
                 <form class="form3" id="form3" method="post" action="">
 
                     <?php 
@@ -75,8 +99,23 @@ class postpoll_widget extends WP_Widget {
                         } else if ($showtype=='2') {
                                         if (isset($entradas)) {
                                             foreach ($entradas as $key) {
-                                                $name = get_the_title( $key ); ?>
-                                                        <input type="radio" id="vote_poll" value="<?php echo $key; ?>" class="radio_button" name="poll"><?php echo $name = get_the_title( $key ); ?><br /> 
+                                                $name = get_the_title( $key ); 
+                                            ?>  <div class="media outcontainer"> 
+                                                <?php
+                                                if ($useimage==1) {
+                                                    $thumb_id = get_post_thumbnail_id($key);
+                                                    $thumb_url = wp_get_attachment_image_src($thumb_id,'thumbnail-size', true);
+                                                    ?>
+                                                        <div class="media-left pull-left img-container">
+                                                            <img src="<? echo $thumb_url[0]; ?>">
+                                                        </div>
+                                                <?php
+                                                }
+                                                ?>
+                                                        <div class="media-body content-cntr">
+                                                        <input type="radio" id="vote_poll" value="<?php echo $key; ?>" class="radio_button media-heading" name="poll"><?php echo $name = get_the_title( $key ); ?><br /> 
+                                                        </div>
+                                                    </div>  
                                                 <?php
                                             }
                                             ?>
@@ -88,8 +127,23 @@ class postpoll_widget extends WP_Widget {
                         } elseif ($showtype=='3') {
                                         if (isset($entradas)) {
                                             foreach ($entradas as $key) {
-                                                $name = get_the_title( $key ); ?>
-                                                        <input type="checkbox" id="vote_poll" value="<?php echo $key; ?>" class="checkbox" name="poll"><?php echo $name = get_the_title( $key ); ?><br /> 
+                                                $name = get_the_title( $key );
+                                                ?>  <div class="media outcontainer"> 
+                                                <?php
+                                                if ($useimage==1) {
+                                                    $thumb_id = get_post_thumbnail_id($key);
+                                                    $thumb_url = wp_get_attachment_image_src($thumb_id,'thumbnail-size', true);
+                                                    ?>
+                                                        <div class="media-left pull-left img-container">
+                                                            <img src="<? echo $thumb_url[0]; ?>">
+                                                        </div>
+                                                <?php
+                                                }
+                                                ?>
+                                                        <div class="media-body content-cntr">
+                                                        <input type="checkbox" id="vote_poll" value="<?php echo $key; ?>" class="checkbox media-heading" name="poll"><?php echo $name = get_the_title( $key ); ?><br /> 
+                                                        </div>
+                                                    </div>  
                                                 <?php
                                             }
                                             ?>
@@ -105,7 +159,7 @@ class postpoll_widget extends WP_Widget {
                         ?>
             </form>
         </div>
-                </aside>
+                </div>
         <?php
         echo $after_widget;
     }

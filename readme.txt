@@ -3,7 +3,7 @@ Contributors: k2klettern
 Tags: Postpoll, Postpoll-api, poll, poll of post, post poll, poll of posts, posts poll
 Requires at least: 4.0
 Tested up to: 4.1
-Stable tag: 0.1.0
+Stable tag: 0.1.1
 License: GPLv2 or later
 
 Postpoll allows admin to set a poll of all or some of posts in the wordpress to vote.
@@ -19,6 +19,7 @@ Major features in Postpoll include:
 * Create all polls as you need
 * View a report of results
 * Widget to show the poll on sidebars
+* Use of the post thumbnail on poll and results
 * Uses Ajax
 
 
@@ -34,3 +35,11 @@ Upload the Postpoll plugin to your blog, Activate it, begin to create polls.
 *Release Date - 18th Juny, 2015*
 
 * First Release
+
+= 0.1.1 =
+*Release Date - 23rd Juny, 2015
+
+*Added Cookies for voting only one time for each poll
+*Added the option to include the image thumbnail of the post as mini-thumbnail on the poll
+*Upgrade of logged user option
+*Upgrade of AJAX service to allow more than one poll on the same page
