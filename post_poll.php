@@ -3,7 +3,7 @@
 Plugin Name: Postpoll
 Plugin URI: 
 Description: Make a poll of your own posts and see which one People Likes
-Version: 0.1.0
+Version: 0.1.1
 Author: Eric Zeidan
 Author URI: 
 License: GPL2
