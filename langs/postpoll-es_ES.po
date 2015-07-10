@@ -1,0 +1,194 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: postpoll\n"
+"POT-Creation-Date: 2015-07-10 09:24+0100\n"
+"PO-Revision-Date: 2015-07-10 09:39+0100\n"
+"Last-Translator: Eric Zeidan <k2klettern@gmail.com>\n"
+"Language-Team: \n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.5\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr_e\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../libppl/widget.php:78 ../postpoll_show.php:61
+msgid "Thanks for your Vote"
+msgstr "Gracias por tu voto"
+
+#: ../libppl/widget.php:79 ../postpoll_show.php:62
+msgid "Sorry, your vote could not be added"
+msgstr "Lo Siento, su voto no fue añadido"
+
+#: ../libppl/widget.php:97 ../libppl/widget.php:125 ../libppl/widget.php:153
+#: ../postpoll_edit.php:167 ../postpoll_edit.php:194 ../postpoll_edit.php:221
+#: ../postpoll_show.php:80 ../postpoll_show.php:108 ../postpoll_show.php:136
+msgid "Vote"
+msgstr "Votar"
+
+#: ../libppl/widget.php:181
+msgid "Select which poll to show"
+msgstr "Selecciona cual encuesta mostrar"
+
+#: ../post_poll.php:40
+msgid "Hi there!  I'm just a plugin, not much I can do when called directly."
+msgstr "Hola! Solo soy un Plugin, no hay mucho que puedas hacer llamándome directamente."
+
+#: ../postpoll_edit.php:3
+msgid "You have to select a Poll to Edit"
+msgstr "Selecciona la encuesta a Editar"
+
+#: ../postpoll_edit.php:4
+msgid "Poll"
+msgstr "Encuesta"
+
+#: ../postpoll_edit.php:5
+msgid "Select the post(s) to be included on this poll"
+msgstr "Selecciona las entrada(s) a ser incluidas"
+
+#: ../postpoll_edit.php:76 ../postpoll_init.php:38
+msgid "settings saved."
+msgstr "Configuración guardada."
+
+#: ../postpoll_edit.php:80 ../postpoll_init.php:42
+msgid "Error, pls try again later."
+msgstr "Error, por Favor intenta mas tarde"
+
+#: ../postpoll_edit.php:113
+msgid "Post Selected"
+msgstr "Entrada Seleccionada"
+
+#: ../postpoll_edit.php:116
+msgid "Delete"
+msgstr "Borrar"
+
+#: ../postpoll_edit.php:124
+msgid "Select here to add a post to the list"
+msgstr "Selecciona aqui para añadir una entrada a la lista"
+
+#: ../postpoll_edit.php:141
+msgid "Select how you want the Poll to be show"
+msgstr "Selecciona como deseas la vista de la encuesta "
+
+#: ../postpoll_edit.php:143
+msgid "Use Post Thumbnail (only for radio and multiselect)"
+msgstr "Usar la Imagen destacada (solo para radio y multiselección)"
+
+#: ../postpoll_edit.php:147
+msgid "Type Selector (dropdown list)"
+msgstr "Tipo Selector (lista desplegable)"
+
+#: ../postpoll_edit.php:148
+msgid "Type Radio (only one option)"
+msgstr "Tipo Radio (Solo una opción)"
+
+#: ../postpoll_edit.php:149
+msgid "Type Multiple options (allow to select more than one option)"
+msgstr "Tipo Opción Multiple (permite seleccionar mas de una opción)"
+
+#: ../postpoll_edit.php:154
+msgid "This is how your Poll will be show"
+msgstr "Asi se vera tu Encuesta"
+
+#: ../postpoll_edit.php:230
+msgid "Show results to user after vote?"
+msgstr "¿Mostrar los resultados despues del voto?"
+
+#: ../postpoll_edit.php:233
+msgid "Save a cookie to avoid more than one vote per visit?"
+msgstr "¿Guardar una cookie para evitar que se vote mas de una vez por visita?"
+
+#: ../postpoll_edit.php:236
+msgid "Only logged users can vote?"
+msgstr "¿Solo usuarios registrados pueden votar?"
+
+#: ../postpoll_edit.php:239
+msgid "Check to get voters data?"
+msgstr "¿Obtener la data del votante?"
+
+#: ../postpoll_edit.php:241
+msgid "Full Name"
+msgstr "Nombre Completo"
+
+#: ../postpoll_edit.php:242
+msgid "E-mail Adresse"
+msgstr "Dirección de e-mail"
+
+#: ../postpoll_edit.php:243
+msgid "Adresse"
+msgstr "Dirección"
+
+#: ../postpoll_edit.php:244
+msgid "Comments"
+msgstr "Comentarios"
+
+#: ../postpoll_edit.php:248
+msgid "Send email to voter"
+msgstr "Enviar email al Votante"
+
+#: ../postpoll_edit.php:250
+msgid "Enter the confirmation Message"
+msgstr "Ingrese el mensaje de confirmación"
+
+#: ../postpoll_edit.php:251
+msgid "Enter text here..."
+msgstr "Ingrese el texto aquí..."
+
+#: ../postpoll_edit.php:255 ../postpoll_init.php:60
+msgid "Save Changes"
+msgstr "Guardar cambios"
+
+#: ../postpoll_init.php:2
+msgid "You are not authorized to view this page."
+msgstr "No estas autorizado a ver esta página."
+
+#: ../postpoll_init.php:9
+msgid "Post poll"
+msgstr "Encuesta de Entradas"
+
+#: ../postpoll_init.php:10
+msgid "by Eric Zeidan"
+msgstr "por Eric Zeidan"
+
+#: ../postpoll_init.php:47
+msgid "Create a New Poll"
+msgstr "Crear una nueva encuesta"
+
+#: ../postpoll_init.php:52
+msgid "Poll Name: "
+msgstr "Nombre de la Encuesta:"
+
+#: ../postpoll_init.php:56
+msgid "Poll Description: "
+msgstr "Descripción de la Encuesta:"
+
+#: ../postpoll_init.php:69
+msgid "Poll ID"
+msgstr "Encuesta ID"
+
+#: ../postpoll_init.php:70
+msgid "Poll Title"
+msgstr "Titulo de la Encuesta"
+
+#: ../postpoll_init.php:71
+msgid "Poll Description"
+msgstr "Descripción de la Encuesta"
+
+#: ../postpoll_init.php:72
+msgid "Poll Shortcode"
+msgstr "Shortcode de la Encuesta"
+
+#: ../postpoll_init.php:81
+msgid "Edit"
+msgstr "Editar"
+
+#: ../postpoll_report.php:4
+msgid "Pls select the poll to view results"
+msgstr "Por Favor selecciona la encuesta para ver los resultados"
+
+#: ../postpoll_report.php:15
+msgid "Show"
+msgstr "Mostrar"
