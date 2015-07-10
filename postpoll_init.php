@@ -1,13 +1,13 @@
 	<?php if (!current_user_can('manage_options')){
-        wp_die( _e('You are not authorized to view this page.') );
+        wp_die( _e('You are not authorized to view this page.','postpoll') );
     }
     				?>
     				<div class="wrap">
     				<div id="welcome-panel" class="welcome-panel">
     					<div class="welcome-panel-content">
     						<div class="welcome-panel-column-container">
-    				<h1><?php _e('Post poll'); ?></h1>
-			        <p><span><?php _e('by Eric Zeidan'); ?></span><p>
+    				<h1><?php _e('Post poll','postpoll'); ?></h1>
+			        <p><span><?php _e('by Eric Zeidan','postpoll'); ?></span><p>
 			        		</div>
 			        	</div>
 			        </div>
@@ -35,29 +35,29 @@
 							$poll_id = wp_insert_post( $my_post );
 							if ($poll_id>0) {
 							?>
-					            <div class="updated"><p><strong><?php _e('settings saved.'); ?></strong></p></div>
+					            <div class="updated"><p><strong><?php _e('settings saved.','postpoll'); ?></strong></p></div>
 					        <?php
 					        } else {
 							?>
-					            <div class="error"><p><strong><?php _e('Error, pls try again later.'); ?></strong></p></div>
+					            <div class="error"><p><strong><?php _e('Error, pls try again later.','postpoll'); ?></strong></p></div>
 					        <?php
 					        }
 					    }
 							?>
-								<h4><?php _e('Create a New Poll'); ?></h4>
+								<h4><?php _e('Create a New Poll','postpoll'); ?></h4>
 								<form name="form1" method="post" action="">
 					            <input type="hidden" name="<?php echo $hidden_field_name; ?>" value="23hH2098KK_12">
 					            <p>
 
-					                <label for="<?php echo $data_field_name_poll; ?>"><?php _e('Poll Name: ' ); ?></label><br />
+					                <label for="<?php echo $data_field_name_poll; ?>"><?php _e('Poll Name: ','postpoll' ); ?></label><br />
 					                <input type="text" id="<?php echo $data_field_name_poll; ?>" name="<?php echo $data_field_name_poll; ?>" size="60" />
 					            </p>
 					            <p>
-					                <label for="<?php echo $data_field_desc_poll; ?>"><?php _e('Poll Description: ' ); ?></label><br />
+					                <label for="<?php echo $data_field_desc_poll; ?>"><?php _e('Poll Description: ','postpoll' ); ?></label><br />
 					                <input type="text" id="<?php echo $data_field_desc_poll; ?>" name="<?php echo $data_field_desc_poll; ?>" size="120" />
 					            </p>
 					            <p class="submit">
-                				<input type="submit" name="Submit" class="button-primary" value="<?php esc_attr_e('Save Changes') ?>" />
+                				<input type="submit" name="Submit" class="button-primary" value="<?php esc_attr_e('Save Changes', 'postpoll') ?>" />
             					</p>
             				<?php
 
@@ -66,10 +66,10 @@
 			        $polls = get_posts($args); ?>
 					<table class="wp-list-table widefat fixed posts">
 						<thead>
-							<th scope="col" class="manage-column column-id"><?php _e('Poll ID'); ?></th>
-							<th scope="col" class="manage-column column-title"><?php _e('Poll Title'); ?></th>
-							<th scope="col" class="manage-column column-description"><?php _e('Poll Description'); ?></th>
-							<th scope="col" class="manage-column column-shortcode" colspan="2"><?php _e('Poll Shortcode'); ?></th>
+							<th scope="col" class="manage-column column-id"><?php _e('Poll ID','postpoll'); ?></th>
+							<th scope="col" class="manage-column column-title"><?php _e('Poll Title','postpoll'); ?></th>
+							<th scope="col" class="manage-column column-description"><?php _e('Poll Description','postpoll'); ?></th>
+							<th scope="col" class="manage-column column-shortcode" colspan="2"><?php _e('Poll Shortcode','postpoll'); ?></th>
 							</thead>
 							<tbody>
 			        <?php
@@ -78,7 +78,7 @@
 			        	echo "<td class=\"title column-title\">". $poll->post_title;
 			        	?>
 			        	<div class="row-actions">
-			        		<span class="edit"><a href="?page=Postpoll-edit&pollid=<?php echo $poll->ID;?>"><?php _e('Edit'); ?></a>
+			        		<span class="edit"><a href="?page=Postpoll-edit&pollid=<?php echo $poll->ID;?>"><?php _e('Edit','postpoll'); ?></a>
 			        		</span>
 			        	</div>
 			        	</td>

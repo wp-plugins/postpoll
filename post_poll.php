@@ -3,7 +3,7 @@
 Plugin Name: Postpoll
 Plugin URI: 
 Description: Make a poll of your own posts and see which one People Likes
-Version: 0.1.0
+Version: 0.1.2
 Author: Eric Zeidan
 Author URI: 
 License: GPL2
@@ -24,13 +24,20 @@ License: GPL2
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
+// load language files
+
+add_action('plugins_loaded', 'postpoll_text');
+
+function postpoll_text() {
+    load_plugin_textdomain('postpoll', false, basename(dirname(__FILE__)) . '/langs');
+}
 
 // Make sure we don't expose any info if called directly
 
 
 
 if ( !function_exists( 'add_action' ) ) {
-	_e('Hi there!  I\'m just a plugin, not much I can do when called directly.');
+	_e('Hi there!  I\'m just a plugin, not much I can do when called directly.','postpoll');
 	exit;
 }
 
