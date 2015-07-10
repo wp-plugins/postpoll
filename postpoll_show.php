@@ -35,6 +35,8 @@
 							foreach($entradas as $key) {
 								$name = get_the_title( $key );
 								$votes = get_post_meta($key, 'postpoll-votes-'.$poll_ID, true);
+								if (empty($votes))
+									$votes = "0";
 							?>	<li>
 								<div class="media outcontainer" <?php if ($useimage!=1) echo "style=\"heigth:auto\""; ?>> 
 											<?php
@@ -77,7 +79,7 @@
 											<input type="hidden" name="pollid" id="pollid" value="<?php echo $poll_ID; ?>">
 											<input type="hidden" name="savecookie" id="savecookie" value="<?php echo $savecookie; ?>">
 											<input type="hidden" name="showtype" id="showtype" value="<?php echo $showtype; ?>">
-											<input type="submit" id="user-vote" class="button-primary" value="<?php esc_attr_e('Vote') ?>" />  <?php
+											<input type="submit" id="user-vote" class="button-primary" value="<?php esc_attr_e('Vote', 'postpoll') ?>" />  <?php
 										}
 						} else if ($showtype=='2') {
 										if (isset($entradas)) {
@@ -105,7 +107,7 @@
 											<input type="hidden" name="pollid" id="pollid" value="<?php echo $poll_ID; ?>">
 											<input type="hidden" name="savecookie" id="savecookie" value="<?php echo $savecookie; ?>">
 											<input type="hidden" name="showtype" id="showtype" value="<?php echo $showtype; ?>">
-											<input type="submit" id="user-vote" class="button-primary" value="<?php esc_attr_e('Vote') ?>" />  <?php
+											<input type="submit" id="user-vote" class="button-primary" value="<?php esc_attr_e('Vote', 'postpoll') ?>" />  <?php
 										}
 						} elseif ($showtype=='3') {
 										if (isset($entradas)) {
@@ -133,7 +135,7 @@
 											<input type="hidden" name="pollid" id="pollid" value="<?php echo $poll_ID; ?>">
 											<input type="hidden" name="savecookie" id="savecookie" value="<?php echo $savecookie; ?>">
 											<input type="hidden" name="showtype" id="showtype" value="<?php echo $showtype; ?>">
-											<input type="submit" id="user-vote" class="button-primary" value="<?php esc_attr_e('Vote') ?>" />  <?php
+											<input type="submit" id="user-vote" class="button-primary" value="<?php esc_attr_e('Vote', 'postpoll') ?>" />  <?php
 										}
 						}
 										?>

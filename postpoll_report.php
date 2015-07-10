@@ -1,7 +1,7 @@
 			<div class="postpoll" id="postpoll">
 				<form class="form4" id="form4" method="post" action="">
 					<p>
-            				<label for="postpoll_pollid"><?php _e('Pls select the poll to view results'); ?></label>
+            				<label for="postpoll_pollid"><?php _e('Pls select the poll to view results','postpoll'); ?></label>
             				<select name="postpoll_pollid" id="postpoll_pollid">
 				                <?php 
 				                    $argus = array('post_type' => 'postpoll-poll');
@@ -12,7 +12,7 @@
 				                ?>
             				</select>
          			</p>
-         		    <input type="submit" id="show-resutls" class="button-primary" value="<?php esc_attr_e('Show') ?>" />
+         		    <input type="submit" id="show-resutls" class="button-primary" value="<?php esc_attr_e('Show', 'postpoll') ?>" />
          		</form>
 			<?php
 			if (isset($_POST['postpoll_pollid'])) {
