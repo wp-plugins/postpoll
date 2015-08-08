@@ -2,8 +2,8 @@
 Contributors: k2klettern
 Tags: Poll, Encuesta, Postpoll, Postpoll-api, poll, poll of post, post poll, poll of posts, posts poll
 Requires at least: 4.0
-Tested up to: 4.2.2
-Stable tag: 0.1.2
+Tested up to: 4.3
+Stable tag: 0.1.3
 License: GPLv2 or later
 
 Postpoll allows admin to set a poll of all or some of posts in the wordpress to vote.
@@ -58,4 +58,8 @@ Upload the Postpoll plugin to your blog, Activate it, begin to create polls.
 
 *Added Spanish translation
 *Added .pot file for translate with any language
+
+= 0.1.3 =
+
+*Change of functions to PHP5 for support of WP4.3
 
