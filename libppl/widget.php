@@ -2,10 +2,10 @@
  
 class postpoll_widget extends WP_Widget {
  
-    function postpoll_widget(){
+    function __construct(){
         // Constructor del Widget
         $widget_ops = array('classname' => 'postpoll_widget', 'description' => "Show Post poll inside a Widget" );
-        $this->WP_Widget('postpoll_widget', "Post Poll Widget", $widget_ops);
+        parent::__construct('postpoll_widget', "Post Poll Widget", $widget_ops);
     }
  
     function widget($args,$instance){
